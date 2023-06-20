@@ -7,6 +7,10 @@ const unsigned int
   RED_LED_PIN = 13,
   GREEN_LED_PIN = 12;
 
+int sensorValue = 0;  // variable to store the sensor value
+int waterCheckValue = 480; // this value is needed to check if there's water on the sensor
+bool isButtonPressed{}, isRelayOn{};
+
 void setup() 
 {
   Serial.begin(9600);
@@ -25,10 +29,6 @@ void setup()
   digitalWrite(RED_LED_PIN, LOW);
   digitalWrite(GREEN_LED_PIN, LOW);
 }
-
-int sensorValue = 0;  // variable to store the sensor value
-int waterCheckValue = 100; // this value is needed to check if there's water on the sensor
-bool isButtonPressed{}, isRelayOn{};
 
 void loop() 
 {
